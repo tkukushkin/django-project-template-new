@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  web:
+    build: web
+    restart: always
+    depends_on:
+      - postgres
+  nginx:
+    build: nginx
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - web
+volumes:
+  pgdata:

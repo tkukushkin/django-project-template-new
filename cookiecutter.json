@@ -1,0 +1,4 @@
+{
+    "project_name": "my-new-project",
+    "package_name": "{{ cookiecutter.project_name|replace('-', '_') }}"
+}
