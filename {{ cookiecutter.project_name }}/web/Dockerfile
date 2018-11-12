@@ -2,7 +2,6 @@ FROM node:8.12-alpine as assets
 COPY assets/package.json assets/yarn.lock /
 RUN yarn
 COPY assets /
-CMD bash
 RUN BUILD=1 /node_modules/.bin/webpack
 
 FROM python:3.7-alpine3.8
