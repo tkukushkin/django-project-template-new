@@ -12,4 +12,3 @@
    project_name [my-new-project]:
    package_name [my_new_project]:
    ```
-  
