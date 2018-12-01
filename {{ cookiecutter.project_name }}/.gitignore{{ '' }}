@@ -1,5 +1,4 @@
 .py[cod]
-.direnv
-docker/web/src/my_new_project/static/
-frontend/node_modules/
-frontend/build/
+.direnv/
+web/assets/build/
+web/assets/node_modules/
