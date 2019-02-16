@@ -1,2 +1,2 @@
 web: python manage.py runserver
-webpack: cd assets && webpack-dev-server --port 8001
+webpack: cd assets && webpack-dev-server

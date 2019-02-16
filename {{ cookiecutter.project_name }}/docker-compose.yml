@@ -1,4 +1,5 @@
-version: '3'
+version: '3.7'
+
 services:
   postgres:
     image: postgres
@@ -6,15 +7,19 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
   web:
-    build: web
     restart: always
+    build: web/
     depends_on:
       - postgres
   nginx:
-    build: nginx
+    build: nginx/
     restart: always
     ports:
       - 80:80
+      - 443:443
+    volumes:
+      - /root/certs:/certs
+      - /root/acme-challenges:/acme-challenges
     depends_on:
       - web
 volumes:

@@ -1,4 +1,4 @@
-FROM node:8.12-alpine as assets
+FROM node:10.15.1-alpine as assets
 COPY assets/package.json assets/yarn.lock /
 RUN yarn
 COPY assets /

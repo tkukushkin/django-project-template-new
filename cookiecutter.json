@@ -1,4 +1,5 @@
 {
     "project_name": "my-new-project",
-    "package_name": "{{ cookiecutter.project_name|replace('-', '_') }}"
+    "package_name": "{{ cookiecutter.project_name|replace('-', '_') }}",
+    "domain": "{{ cookiecutter.project_name }}.com"
 }
