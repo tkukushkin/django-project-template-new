@@ -11,4 +11,5 @@
    $ cookiecutter https://github.com/tkukushkin/django-project-template-new.git
    project_name [my-new-project]:
    package_name [my_new_project]:
+   domain [my-new-project.com]:
    ```
