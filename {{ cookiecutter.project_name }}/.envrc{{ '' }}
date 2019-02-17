@@ -1,0 +1,7 @@
+layout python python3.7
+
+export DJANGO_SETTINGS_MODULE="{{ cookiecutter.package_name }}.settings.development"
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://{{ cookiecutter.domain }}:2376"
+export DOCKER_CERT_PATH="$HOME/.docker/machine/machines/{{ cookiecutter.domain }}"
+export DOCKER_MACHINE_NAME="{{ cookiecutter.domain }}"
