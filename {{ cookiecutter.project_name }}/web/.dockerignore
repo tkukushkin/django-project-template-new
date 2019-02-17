@@ -1,1 +1,4 @@
-node_modules/
+.py[cod]
+{{ cookiecutter.package_name }}/static/
+assets/node_modules/
+assets/build/
