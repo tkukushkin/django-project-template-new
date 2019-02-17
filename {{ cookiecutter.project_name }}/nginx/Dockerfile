@@ -3,4 +3,4 @@ RUN python manage.py collectstatic --noinput
 
 FROM nginx:alpine
 COPY etc /etc
-COPY --from=web /var/www /var/www
+COPY --from=web /var/www/static /var/www/static

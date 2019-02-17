@@ -12,9 +12,9 @@ ssh root@{{ cookiecutter.domain }} bash -c '
   apt-get install -y docker-ce docker-ce-cli containerd.io
   [ ! -d .acme.sh ] && curl https://get.acme.sh | sh
   ./.acme.sh/acme.sh --issue --standalone -d {{ cookiecutter.domain }} --force
-  mkdir -p certs/
+  mkdir -p certs
   ./.acme.sh/acme.sh --install-cert -d {{ cookiecutter.domain }} --cert-file certs/cert.pem --key-file certs/key.pem --fullchain-file certs/fullchain.pem
-  mkdir -p acme-challenges/
+  mkdir -p media
 '
 
 [ -z $(docker-machine ls --filter 'NAME={{ cookiecutter.domain }}' -q) ] && docker-machine create --driver generic --generic-ip-address={{ cookiecutter.domain }} --generic-ssh-user=root --generic-ssh-key ~/.ssh/id_rsa {{ cookiecutter.domain }}
@@ -24,6 +24,6 @@ ssh root@{{ cookiecutter.domain }} bash -c '
 ssh root@{{ cookiecutter.domain }} bash -c '
   set -e
   ./.acme.sh/acme.sh --remove -d {{ cookiecutter.domain }}
-  mkdir -p acme-challenges/
+  mkdir -p acme-challenges
   ./.acme.sh/acme.sh --issue -d {{ cookiecutter.domain }} -w acme-challenges/
 '
